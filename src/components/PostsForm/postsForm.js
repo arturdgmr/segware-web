@@ -29,10 +29,7 @@ export default function (props) {
 
         axios.post(`/posts`, { text: posts.text,
             upvote: posts.upvote })
-        .then(res => {
-            res.data.id ? history.push('/') 
-                : alert("Ops, algo deu errado! :(")
-        })
+        .then(history.push('/'))
     }
 
     function handleSubmitUpdate (event) {
@@ -40,9 +37,7 @@ export default function (props) {
 
         axios.patch(`/posts/editar/${id}/`, { text: posts.text,
             upvote: 0 })
-        .then(res => {
-            history.push('/') 
-        })
+        .then(history.push('/'))
     }
     if(id){
         return(
