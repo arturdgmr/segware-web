@@ -9,7 +9,7 @@ function Button(props) {
     const url = props.url
     const history = useHistory()
 
-    function onClick (event) {
+    function onClick () {
         if(id && type === 'edit'){
             return history.push(url)
         }else if(id && type === 'delete'){
